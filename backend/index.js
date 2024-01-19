@@ -15,7 +15,7 @@ app.use((req,res,next)=>{
 
 
 app.get('/', (req, res) => {
-  res.send('Hello World!---------')
+  res.status(200).json('Hello World!---------')
 })
 app.use(express.json())
 app.use('/api', require("./Routes/CreateUser"));
