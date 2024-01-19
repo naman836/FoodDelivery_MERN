@@ -8,11 +8,11 @@ const cors = require("cors");
 app.use(cors());
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://foodexpress-nine.vercel.app");
+  res.setHeader("Access-Control-Allow-Origin", "https://foodexpress-naman.vercel.app");
   next();
 });
 app.use((req,res,next)=>{
-  res.setHeader("Access-Control-Allow-Origin","https://foodexpress-nine.vercel.app");
+  res.setHeader("Access-Control-Allow-Origin","https://foodexpress-naman.vercel.app");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
