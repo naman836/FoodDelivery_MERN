@@ -64,7 +64,7 @@ return (
                     </div>
         <div className='container'>
             {
-                foodCat.length !== 0
+              foodItem && foodItem.length !== 0 
                     ? foodCat.map((data) => {
                         return (
                             <div className='row mb-3'>
