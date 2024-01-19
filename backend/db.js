@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const mongoURI = 'mongodb://127.0.0.1:27017/foodexpressmern';
+const mongoURI = 'mongodb+srv://namanpandey836:Naman@123@cluster0.7ngcoxd.mongodb.net/?retryWrites=true&w=majority';
 
 const connectToMongoDB = async () => {
   try {
