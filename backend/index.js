@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const port = 5000 || process.env.PORT
 const mongoDB = require("./db")
+const path = require("path");
 mongoDB();
 const cors = require("cors");
 app.use(cors());
@@ -14,10 +15,17 @@ app.use((req,res,next)=>{
   next();
 }) 
 
-
-app.get('/', (req, res) => {
-  res.status(200).json('Hello World!---------')
-})
+app.use(express.static(path.join(__dirname, "../build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build/index.html"), function (err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
+});
+// app.get('/', (req, res) => {
+//   res.status(200).json('Hello World!---------')
+// })
 app.use(express.json())
 app.use('/api', require("./Routes/CreateUser"));
 app.use('/api', require("./Routes/DisplayData")); 

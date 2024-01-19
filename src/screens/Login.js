@@ -6,7 +6,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(JSON.stringify({ email: credentials.email, password: credentials.password }))
-    const response = await fetch("https://food-delivery-backend-tawny.vercel.app/api/loginuser", {
+    const response = await fetch("/api/loginuser", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

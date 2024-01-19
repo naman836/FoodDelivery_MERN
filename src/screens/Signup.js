@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-
+import { useNavigate } from 'react-router-dom';
+const navigate=useNavigate();
 export default function Signup() {
     const [credentials, setcredentials] = useState({ name: "", email: "", password: "", geolocation: "" })
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(JSON.stringify({name:credentials.name, email:credentials.email,password:credentials.password,location:credentials.geolocation}))
-        const response = await fetch("https://food-delivery-backend-tawny.vercel.app/api/createuser", {
+        const response = await fetch("/api/createuser", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -22,7 +23,9 @@ export default function Signup() {
 
         if (!json.success) {
             alert("Enter Valid Credentials")
-        }
+        }else(
+            navigate("/login")
+        )
     }
     const onChange = (event) => {
         setcredentials({ ...credentials, [event.target.name]: event.target.value });
