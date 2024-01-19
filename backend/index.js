@@ -1,9 +1,10 @@
 const express = require('express')
 const app = express()
-const port = 5000 || process.env.port
+const port = 5000 || process.env.PORT
 const mongoDB = require("./db")
 mongoDB();
-
+const cors = require("cors");
+app.use(cors());
 app.use((req,res,next)=>{
   res.setHeader("Access-Control-Allow-Origin","https://foodexpress-nine.vercel.app/");
   res.header(
