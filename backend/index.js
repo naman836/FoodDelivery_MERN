@@ -14,10 +14,13 @@ app.use((req,res,next)=>{
   );
   next();
 }) 
+var filePath = "../build/index.html"
+var resolvedPath = path.resolve(filePath);
+
 
 app.use(express.static(path.join(__dirname, "../build")));
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../build/index.html"), function (err) {
+  res.sendFile(path.join(__dirname,resolvedPath), function (err) {
     if (err) {
       res.status(500).send(err);
     }

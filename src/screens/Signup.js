@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
-const navigate=useNavigate();
+
 export default function Signup() {
     const [credentials, setcredentials] = useState({ name: "", email: "", password: "", geolocation: "" })
-
+    const navigate=useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(JSON.stringify({name:credentials.name, email:credentials.email,password:credentials.password,location:credentials.geolocation}))
