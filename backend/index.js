@@ -4,7 +4,7 @@ const port = 5000 || process.env.PORT
 const mongoDB = require("./db")
 const path = require("path");
 mongoDB();
-const cors = require("cors");
+const cors = require("cors"); 
 app.use(cors());
 
 app.use((req, res, next) => {
