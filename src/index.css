@@ -13,14 +13,14 @@ code {
     monospace;
 }
 
-.nav-link{
+/* .nav-link{
   color: white !important;
-}
+} */
 
 #carousel{
   max-height: 500px;
 }
 
-.carousalImg{
+/* .carousalImg{
   object-fit: contain !important;
-}
+} */
